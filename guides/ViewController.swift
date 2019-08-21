@@ -22,8 +22,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
-        WebService().loadGuides { (guides: GuidesResponse?, error: Error?) in
-            self.guides = guides?.data
+        GuideFacade.shared.loadUpcomingGuides { (upcomingGuides: UpcomingGuidesResponse?, error: Error?) in
+            self.guides = upcomingGuides?.data
             self.tableView.reloadData()
         }
     }

@@ -8,15 +8,12 @@
 
 import Foundation
 
-struct WebService {
+struct WebService: Service {
+    
     static let shared = WebService()
     
-    func loadGuides(completion: @escaping (GuidesResponse?, Error?) -> Void) {
-        load(request: ApiRouter.upcomingGuides.request, completion: completion)
-    }
-    
-    private func load<T:Decodable>(request: URLRequest, completion: @escaping (T?, Error?) -> Void) {
-        URLSession.shared.dataTask(with: request) { data, _, error in
+    func load<T>(route: ApiRouter, completion: @escaping (T?, Error?) -> Void) where T : Decodable {
+        URLSession.shared.dataTask(with: route.request) { data, _, error in
             DispatchQueue.main.async {
                 guard error == nil else {
                     completion(nil, error)
@@ -33,6 +30,6 @@ struct WebService {
                 
                 completion(guidesResponse, error)
             }
-        }.resume()
+            }.resume()
     }
 }

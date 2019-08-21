@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GuidesResponse: Codable {
+struct UpcomingGuidesResponse: Codable {
     var total: String
     var data: [Guide]
 }

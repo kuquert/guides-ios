@@ -1,0 +1,155 @@
+{
+    "total": "115",
+    "data": [
+        {
+            "startDate": "Aug 23, 2019",
+            "objType": "guide",
+            "endDate": "Sep 30, 2019",
+            "name": "Wellesley College Orientation 2019",
+            "loginRequired": false,
+            "url": "/guide/102054",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/aNbvvTUjHb0nSDIfOVcdYNNTTs1Agsb2azWytv5z/logo.png"
+        },
+        {
+            "startDate": "Aug 23, 2019",
+            "objType": "guide",
+            "endDate": "Sep 01, 2019",
+            "name": "Columbia GS Orientation - Fall 2019",
+            "loginRequired": false,
+            "url": "/guide/102758",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/abdf64bkvyGLLo9XxXXAf8ID9dYR6GHgkrcoRJxO/logo.png"
+        },
+        {
+            "startDate": "Aug 23, 2019",
+            "objType": "guide",
+            "endDate": "Sep 08, 2019",
+            "name": "Longhorn Welcome 2019",
+            "loginRequired": false,
+            "url": "/guide/106360",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/qbpq5AWuepgOH0GMLTyN4buidU2snsKJQYQ2aemX/logo.png"
+        },
+        {
+            "startDate": "Aug 23, 2019",
+            "objType": "guide",
+            "endDate": "Aug 25, 2019",
+            "name": "Samford Connections 2019",
+            "loginRequired": false,
+            "url": "/guide/154664",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/QZvaEhsnZQnHtUjT4NHzvsVCcRX6qPcUDKhes9Jn/logo.png"
+        },
+        {
+            "startDate": "Aug 23, 2019",
+            "objType": "guide",
+            "endDate": "Aug 24, 2019",
+            "name": "New Graduate Student Orientation 2019",
+            "loginRequired": false,
+            "url": "/guide/106358",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/q66ubZl8XKr5WPoAtkjP2plpvQjRcX6aLHdL8QIT/logo.png"
+        },
+        {
+            "startDate": "Aug 23, 2019",
+            "objType": "guide",
+            "endDate": "Aug 27, 2019",
+            "name": "AMEE 2019",
+            "loginRequired": false,
+            "url": "/guide/162742",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/mAG4koIbTvQLO6N1qHWiwnHsg62y3dxOocYfEgNJ/logo.png"
+        },
+        {
+            "startDate": "Aug 24, 2019",
+            "objType": "guide",
+            "endDate": "Sep 15, 2019",
+            "name": "UD 1743 Welcome Days",
+            "loginRequired": false,
+            "url": "/guide/159040",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/4cPRc6YDwXNr7LhOQGOgfEGB2HHdTL665aZvKwgr/logo.png"
+        },
+        {
+            "startDate": "Aug 24, 2019",
+            "objType": "guide",
+            "endDate": "Aug 24, 2019",
+            "name": "Packapalooza 2019",
+            "loginRequired": false,
+            "url": "/guide/163841",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/PuenY3EAEwrNZwRdA9djziems1I0g1bv7mxz2IdU/logo.png"
+        },
+        {
+            "startDate": "Aug 24, 2019",
+            "objType": "guide",
+            "endDate": "Sep 02, 2019",
+            "name": "Marist Welcome Week 2019",
+            "loginRequired": false,
+            "url": "/guide/164888",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/M2lqcIwraSXDYktGztcaXzgLfo54WYY7zFrXdIyB/logo.png"
+        },
+        {
+            "startDate": "Aug 24, 2019",
+            "objType": "guide",
+            "endDate": "Aug 24, 2019",
+            "name": "New Graduate Student Orientation",
+            "loginRequired": false,
+            "url": "/guide/158764",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/gFa9X4IgxJS31euiEOxEQgLCNVeJWRuaeMgJQDnV/logo.png"
+        },
+        {
+            "startDate": "Aug 25, 2019",
+            "objType": "guide",
+            "endDate": "Aug 29, 2019",
+            "name": "Worldwide Fall 2019 Show",
+            "loginRequired": false,
+            "url": "/guide/166849",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/WMfo3kWe7hVouPjJYFJGLTjdlpzBLVnOehbtyfNB/logo.png"
+        },
+        {
+            "startDate": "Aug 26, 2019",
+            "objType": "guide",
+            "endDate": "Sep 09, 2019",
+            "name": "MMC Welcome Week 2019",
+            "loginRequired": false,
+            "url": "/guide/160807",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/yiK7LzODH2s1Qb84WUaPjzLlIjPhgykg4mWrKvA3/logo.png"
+        },
+        {
+            "startDate": "Aug 26, 2019",
+            "objType": "guide",
+            "endDate": "Aug 28, 2019",
+            "name": "PAX Dev 2019",
+            "loginRequired": false,
+            "url": "/guide/160964",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/tKKHNHpHieFugDLGdi4bvDWIqkYEdGmWBE6ujEtF/logo.png"
+        },
+        {
+            "startDate": "Aug 26, 2019",
+            "objType": "guide",
+            "endDate": "Aug 26, 2019",
+            "name": "Undergraduate Open Day, 27 August 2019",
+            "loginRequired": false,
+            "url": "/guide/165162",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/oxrQKzY4ar0WiPMBlnxnzVhkkAqtCa965b4S2xwK/logo.png"
+        },
+        {
+            "startDate": "Aug 27, 2019",
+            "objType": "guide",
+            "endDate": "Aug 29, 2019",
+            "name": "Columbia University SPS New Student Orientation",
+            "loginRequired": false,
+            "url": "/guide/162442",
+            "venue": {},
+            "icon": "https://s3.amazonaws.com/media.guidebook.com/service/g8biPCsfNFpPFGe9HO8xnjLaN4EezE5fUUQMEnNc/logo.png"
+        }
+    ]
+}
