@@ -12,9 +12,28 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loadGuides()
     }
 
-
+    private func loadGuides() {
+        let url = URL(string: "https://www.guidebook.com/service/v2/upcomingGuides/")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: urlRequest) { (data: Data?, response: URLResponse?, error: Error?) in
+            guard error == nil else {
+                print(error ?? "Empty error")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data")
+                return
+            }
+            
+            let json = try! JSONSerialization.jsonObject(with: data, options: [])
+            print(json)
+        }.resume()
+    }
 }
 
