@@ -22,34 +22,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetup()
-        loadGuides()
-    }
-
-    private func loadGuides() {
-        let url = URL(string: "https://www.guidebook.com/service/v2/upcomingGuides/")!
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        
-        URLSession.shared.dataTask(with: urlRequest) { [weak self] (data: Data?, response: URLResponse?, error: Error?) in
-            guard error == nil else {
-                print(error!)
-                return
-            }
-            
-            guard let data = data else {
-                print("No data")
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            let guidesResponse = try! decoder.decode(GuidesResponse.self, from: data)
-            let guides = guidesResponse.data
-            print(guides)
-            DispatchQueue.main.async {
-                self?.guides = guides
-                self?.tableView.reloadData()
-            }
-        }.resume()
+        WebService().loadGuides { (guides: GuidesResponse?, error: Error?) in
+            self.guides = guides?.data
+            self.tableView.reloadData()
+        }
     }
 }
 
