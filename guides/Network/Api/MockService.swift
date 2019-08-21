@@ -12,7 +12,7 @@ struct MockService: Service {
     
     static let shared = MockService()
     
-    func load<T>(route: ApiRouter, completion: @escaping (T?, Error?) -> Void) where T : Decodable {
+    func load<T>(route: ApiRoute, completion: @escaping (T?, Error?) -> Void) where T : Decodable {
         var fileName: String {
             switch route {
             case .upcomingGuides:

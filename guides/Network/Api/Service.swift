@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Service {
-    func load<T:Decodable>(route: ApiRouter, completion: @escaping (T?, Error?) -> Void)
+    func load<T:Decodable>(route: ApiRoute, completion: @escaping (T?, Error?) -> Void)
 }

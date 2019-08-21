@@ -14,6 +14,6 @@ struct GuideFacade {
     private let service: Service = WebService.shared
     
     func loadUpcomingGuides(completion: @escaping (UpcomingGuidesResponse?, Error?) -> Void) {
-        service.load(route: ApiRouter.upcomingGuides, completion: completion)
+        service.load(route: ApiRoute.upcomingGuides, completion: completion)
     }
 }

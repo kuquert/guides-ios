@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ApiRouter {
+enum ApiRoute {
     case upcomingGuides
     case guide(String) //TODO: This is just an non-working example
     

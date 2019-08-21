@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     private var guides: [Guide]?
     
     @IBOutlet weak var tableView: UITableView!
-    
+
     private func tableViewSetup() {
         tableView.delegate = self
         tableView.dataSource = self
