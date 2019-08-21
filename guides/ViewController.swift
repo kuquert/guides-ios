@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
         URLSession.shared.dataTask(with: urlRequest) { (data: Data?, response: URLResponse?, error: Error?) in
             guard error == nil else {
-                print(error ?? "Empty error")
+                print(error!)
                 return
             }
             
@@ -31,8 +31,9 @@ class ViewController: UIViewController {
                 return
             }
             
-            let json = try! JSONSerialization.jsonObject(with: data, options: [])
-            print(json)
+            let decoder = JSONDecoder()
+            let guides = try! decoder.decode(GuidesResponse.self, from: data)
+            print(guides)
         }.resume()
     }
 }
