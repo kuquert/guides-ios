@@ -10,38 +10,63 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private var guides: [Guide]?
-    
     @IBOutlet weak var tableView: UITableView!
 
+    private var groupedGuides: [String : [Guide]] = [:]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableViewSetup()
+        GuideFacade.shared.loadUpcomingGuides { [weak self] (upcomingGuides, error) in
+            guard let guides = upcomingGuides?.data else {
+                return
+            }
+            self?.groupedGuides = ViewController.groupByDate(guides: guides)
+            self?.tableView.reloadData()
+        }
+    }
+    
     private func tableViewSetup() {
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableViewSetup()
-        GuideFacade.shared.loadUpcomingGuides { (upcomingGuides: UpcomingGuidesResponse?, error: Error?) in
-            self.guides = upcomingGuides?.data
-            self.tableView.reloadData()
+    private static func groupByDate(guides: [Guide]) -> [String : [Guide]] {
+        var dict: [String : [Guide]] = [:]
+        guides.forEach {
+            var temp = dict.removeValue(forKey: $0.startDate) ?? []
+            temp.append($0)
+            dict[$0.startDate] = temp
         }
+        return dict
     }
 }
 
 extension ViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return groupedGuides.keys.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return groupedGuides.keys.sorted()[section]
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return guides?.count ?? 0
+        let keyForSection = groupedGuides.keys.sorted()[section]
+        return groupedGuides[keyForSection]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let guide = guides?[indexPath.row] else {
+        let keyForSection = groupedGuides.keys.sorted()[indexPath.section]
+        let guides_ = groupedGuides[keyForSection]
+        
+        guard let guide = guides_?[indexPath.row] else {
             return UITableViewCell()
         }
         
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "guideTableViewCell")
         cell.textLabel?.text = guide.name
-        cell.detailTextLabel?.text = guide.url
+        cell.detailTextLabel?.text = guide.startDate
         return cell
     }
 }
