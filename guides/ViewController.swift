@@ -64,10 +64,14 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "guideTableViewCell")
-        cell.textLabel?.text = guide.name
-        cell.detailTextLabel?.text = guide.startDate
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GuideTableViewCell",
+                                                 for: indexPath) as! GuideTableViewCell
+        cell.render(guide: guide)
         return cell
+    }
+    
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
