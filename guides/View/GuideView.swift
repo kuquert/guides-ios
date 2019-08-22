@@ -10,17 +10,13 @@ import UIKit
 
 final class GuideView: UIView, NibLoadable {
     
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var cityLabel: UILabel!
-    @IBOutlet var stateLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var detailLable: UILabel!
     
     var guide: Guide? {
         didSet {
-            nameLabel.text = guide?.name
-            cityLabel.text = guide?.venue.city
-            stateLabel.text = guide?.venue.state
-            dateLabel.text = guide?.endDate
+            titleLabel.text = guide?.name
+            detailLable.text = "\(guide?.venue.city ?? ""), \(guide?.venue.state ?? "") · ends: \(guide?.endDate ?? "")"
         }
     }
     
