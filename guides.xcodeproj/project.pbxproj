@@ -20,11 +20,10 @@
 		64729828230E035800E2DF32 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64729827230E035800E2DF32 /* Service.swift */; };
 		6472982A230E040100E2DF32 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64729829230E040100E2DF32 /* MockService.swift */; };
 		6472982D230E07F000E2DF32 /* upcomingGuides.json in Resources */ = {isa = PBXBuildFile; fileRef = 6472982C230E07F000E2DF32 /* upcomingGuides.json */; };
-		64729830230E4A6800E2DF32 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472982F230E4A6800E2DF32 /* GuideView.swift */; };
 		64729832230E4A7800E2DF32 /* GuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64729831230E4A7800E2DF32 /* GuideTableViewCell.swift */; };
 		64729837230E4B2A00E2DF32 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64729836230E4B2A00E2DF32 /* NibLoadable.swift */; };
 		64729839230E4B4500E2DF32 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64729838230E4B4500E2DF32 /* Extensions.swift */; };
-		6472983B230E4C3C00E2DF32 /* GuideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6472983A230E4C3C00E2DF32 /* GuideView.xib */; };
+		64EB54872311EF7500048435 /* GuideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB54862311EF7500048435 /* GuideTableViewCell.xib */; };
 		64F9BD1F230DC95900043897 /* Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9BD1E230DC95800043897 /* Guide.swift */; };
 		64F9BD21230DCBA400043897 /* UpcomingGuidesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9BD20230DCBA400043897 /* UpcomingGuidesResponse.swift */; };
 		64F9BD23230DCDCC00043897 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9BD22230DCDCC00043897 /* Venue.swift */; };
@@ -46,11 +45,10 @@
 		64729827230E035800E2DF32 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		64729829230E040100E2DF32 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		6472982C230E07F000E2DF32 /* upcomingGuides.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = upcomingGuides.json; sourceTree = "<group>"; };
-		6472982F230E4A6800E2DF32 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		64729831230E4A7800E2DF32 /* GuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTableViewCell.swift; sourceTree = "<group>"; };
 		64729836230E4B2A00E2DF32 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		64729838230E4B4500E2DF32 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		6472983A230E4C3C00E2DF32 /* GuideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideView.xib; sourceTree = "<group>"; };
+		64EB54862311EF7500048435 /* GuideTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideTableViewCell.xib; sourceTree = "<group>"; };
 		64F9BD1E230DC95800043897 /* Guide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
 		64F9BD20230DCBA400043897 /* UpcomingGuidesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingGuidesResponse.swift; sourceTree = "<group>"; };
 		64F9BD22230DCDCC00043897 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -86,14 +84,12 @@
 		64553162230DBDF00099A0F3 /* guides */ = {
 			isa = PBXGroup;
 			children = (
-				64729835230E4B0C00E2DF32 /* Util */,
-				6472982E230E4A4200E2DF32 /* View */,
-				6472982B230E07BD00E2DF32 /* MockData */,
-				64729818230DF31000E2DF32 /* Network */,
 				64F9BD1D230DC93900043897 /* Model */,
+				6472982E230E4A4200E2DF32 /* View */,
+				64EB54852311CD1E00048435 /* Controller */,
+				64729835230E4B0C00E2DF32 /* Util */,
+				64729818230DF31000E2DF32 /* Network */,
 				64553163230DBDF00099A0F3 /* AppDelegate.swift */,
-				64553165230DBDF00099A0F3 /* ViewController.swift */,
-				64553167230DBDF00099A0F3 /* Main.storyboard */,
 				6455316A230DBDF20099A0F3 /* Assets.xcassets */,
 				6455316C230DBDF20099A0F3 /* LaunchScreen.storyboard */,
 				6455316F230DBDF20099A0F3 /* Info.plist */,
@@ -104,6 +100,7 @@
 		64729818230DF31000E2DF32 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6472982B230E07BD00E2DF32 /* MockData */,
 				64729823230E01A600E2DF32 /* Api */,
 				64729824230E020300E2DF32 /* Facade */,
 				64F9BD24230DCDE500043897 /* Response */,
@@ -143,9 +140,9 @@
 		6472982E230E4A4200E2DF32 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6472982F230E4A6800E2DF32 /* GuideView.swift */,
-				6472983A230E4C3C00E2DF32 /* GuideView.xib */,
+				64553167230DBDF00099A0F3 /* Main.storyboard */,
 				64729831230E4A7800E2DF32 /* GuideTableViewCell.swift */,
+				64EB54862311EF7500048435 /* GuideTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +154,14 @@
 				64729838230E4B4500E2DF32 /* Extensions.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		64EB54852311CD1E00048435 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				64553165230DBDF00099A0F3 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		64F9BD1D230DC93900043897 /* Model */ = {
@@ -234,10 +239,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64EB54872311EF7500048435 /* GuideTableViewCell.xib in Resources */,
 				6455316E230DBDF20099A0F3 /* LaunchScreen.storyboard in Resources */,
 				6455316B230DBDF20099A0F3 /* Assets.xcassets in Resources */,
 				6472982D230E07F000E2DF32 /* upcomingGuides.json in Resources */,
-				6472983B230E4C3C00E2DF32 /* GuideView.xib in Resources */,
 				64553169230DBDF00099A0F3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +260,6 @@
 				64729837230E4B2A00E2DF32 /* NibLoadable.swift in Sources */,
 				64F9BD23230DCDCC00043897 /* Venue.swift in Sources */,
 				64729820230DF55E00E2DF32 /* HttpMethod.swift in Sources */,
-				64729830230E4A6800E2DF32 /* GuideView.swift in Sources */,
 				64729822230DFF8E00E2DF32 /* ApiError.swift in Sources */,
 				64553166230DBDF00099A0F3 /* ViewController.swift in Sources */,
 				64729832230E4A7800E2DF32 /* GuideTableViewCell.swift in Sources */,

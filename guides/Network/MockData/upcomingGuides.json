@@ -18,7 +18,7 @@
             "name": "Columbia GS Orientation - Fall 2019",
             "loginRequired": false,
             "url": "/guide/102758",
-            "venue": {},
+            "venue": {"city":"Caixas do Sul", "state":"RS"},
             "icon": "https://s3.amazonaws.com/media.guidebook.com/service/abdf64bkvyGLLo9XxXXAf8ID9dYR6GHgkrcoRJxO/logo.png"
         },
         {
