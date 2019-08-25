@@ -9,27 +9,26 @@
 import Foundation
 
 struct WebService: Service {
-    
     static let shared = WebService()
-    
-    func load<T>(route: ApiRoute, completion: @escaping (T?, Error?) -> Void) where T : Decodable {
+
+    func load<T>(route: ApiRoute, completion: @escaping (T?, Error?) -> Void) where T: Decodable {
         URLSession.shared.dataTask(with: route.request) { data, _, error in
             DispatchQueue.main.async {
                 guard error == nil else {
                     completion(nil, error)
                     return
                 }
-                
+
                 guard let data = data else {
                     completion(nil, ApiError.noData)
                     return
                 }
-                
+
                 let decoder = JSONDecoder()
                 let guidesResponse = try! decoder.decode(T.self, from: data)
-                
+
                 completion(guidesResponse, error)
             }
-            }.resume()
+        }.resume()
     }
 }
