@@ -94,11 +94,12 @@
 		64553162230DBDF00099A0F3 /* guides */ = {
 			isa = PBXGroup;
 			children = (
+				64729818230DF31000E2DF32 /* Network */,
 				64F9BD1D230DC93900043897 /* Model */,
 				6472982E230E4A4200E2DF32 /* View */,
 				64EB54852311CD1E00048435 /* Controller */,
 				64729835230E4B0C00E2DF32 /* Util */,
-				64729818230DF31000E2DF32 /* Network */,
+				6472982B230E07BD00E2DF32 /* MockData */,
 				64553163230DBDF00099A0F3 /* AppDelegate.swift */,
 				6455316A230DBDF20099A0F3 /* Assets.xcassets */,
 				6455316C230DBDF20099A0F3 /* LaunchScreen.storyboard */,
@@ -110,10 +111,9 @@
 		64729818230DF31000E2DF32 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				6472982B230E07BD00E2DF32 /* MockData */,
 				64729823230E01A600E2DF32 /* Api */,
-				64729824230E020300E2DF32 /* Facade */,
 				64F9BD24230DCDE500043897 /* Response */,
+				64729824230E020300E2DF32 /* Facade */,
 			);
 			path = Network;
 			sourceTree = "<group>";
