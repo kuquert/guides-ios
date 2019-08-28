@@ -19,14 +19,14 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
 
     var guide: Guide? {
         didSet {
-            let endDate = formattedEndDate(guide)
-            let location = formattedLocation(guide)
             titleLabel.text = guide?.name.uppercased()
-
+            
+            let endDate = formattedEndDate(guide)
             detailLable.text = endDate
             detailLable.isHidden = endDate == nil
             calendarIcon.isHidden = endDate == nil
 
+            let location = formattedLocation(guide)
             locationLable.text = location
             locationLable.isHidden = location == nil
             locationIcon.isHidden = location == nil
