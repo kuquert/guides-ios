@@ -8,14 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
-    
+
     private let cellId = "GuideTableViewCell"
+    private let headerId = "SectionHeaderView"
     private var groupedGuides: [String: [Guide]] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Upcomming Guides"
         setupTableView()
         loadUpcommingGuides()
     }
@@ -23,7 +25,16 @@ class ViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(GuideTableViewCell.self, forCellReuseIdentifier: cellId)
+
+        tableView.estimatedRowHeight = 120
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 105
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+
+        tableView.register(GuideTableViewCell.self,
+                           forCellReuseIdentifier: cellId)
+        tableView.register(SectionHeaderView.self,
+                           forHeaderFooterViewReuseIdentifier: headerId)
     }
 
     private func loadUpcommingGuides() {
@@ -52,8 +63,10 @@ extension ViewController: UITableViewDataSource {
         return groupedGuides.keys.count
     }
 
-    func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Starting on " + groupedGuides.keys.sorted()[section]
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerId) as! SectionHeaderView
+        header.startDate = groupedGuides.keys.sorted()[section]
+        return header
     }
 
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,12 +84,15 @@ extension ViewController: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId,
                                                  for: indexPath) as! GuideTableViewCell
-        cell.guide = guide
-        return cell
-    }
 
-    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        cell.guide = guide
+
+        ImageLoader.shared.obtainImageWithPath(imagePath: guide.icon) { image in
+            if let updateCell = tableView.cellForRow(at: indexPath) as? GuideTableViewCell {
+                updateCell.setIcon(image)
+            }
+        }
+        return cell
     }
 }
 

@@ -23,7 +23,10 @@
 		64729832230E4A7800E2DF32 /* GuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64729831230E4A7800E2DF32 /* GuideTableViewCell.swift */; };
 		64729837230E4B2A00E2DF32 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64729836230E4B2A00E2DF32 /* NibLoadable.swift */; };
 		64729839230E4B4500E2DF32 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64729838230E4B4500E2DF32 /* Extensions.swift */; };
+		649063952316552400332540 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649063942316552400332540 /* ImageLoader.swift */; };
 		64EB54872311EF7500048435 /* GuideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB54862311EF7500048435 /* GuideTableViewCell.xib */; };
+		64EB54892312487F00048435 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB54882312487F00048435 /* SectionHeaderView.swift */; };
+		64EB548B2312489000048435 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64EB548A2312489000048435 /* SectionHeaderView.xib */; };
 		64F9BD1F230DC95900043897 /* Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9BD1E230DC95800043897 /* Guide.swift */; };
 		64F9BD21230DCBA400043897 /* UpcomingGuidesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9BD20230DCBA400043897 /* UpcomingGuidesResponse.swift */; };
 		64F9BD23230DCDCC00043897 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9BD22230DCDCC00043897 /* Venue.swift */; };
@@ -48,7 +51,10 @@
 		64729831230E4A7800E2DF32 /* GuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTableViewCell.swift; sourceTree = "<group>"; };
 		64729836230E4B2A00E2DF32 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		64729838230E4B4500E2DF32 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		649063942316552400332540 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		64EB54862311EF7500048435 /* GuideTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideTableViewCell.xib; sourceTree = "<group>"; };
+		64EB54882312487F00048435 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		64EB548A2312489000048435 /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		64F9BD1E230DC95800043897 /* Guide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
 		64F9BD20230DCBA400043897 /* UpcomingGuidesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingGuidesResponse.swift; sourceTree = "<group>"; };
 		64F9BD22230DCDCC00043897 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -143,6 +149,8 @@
 				64553167230DBDF00099A0F3 /* Main.storyboard */,
 				64729831230E4A7800E2DF32 /* GuideTableViewCell.swift */,
 				64EB54862311EF7500048435 /* GuideTableViewCell.xib */,
+				64EB54882312487F00048435 /* SectionHeaderView.swift */,
+				64EB548A2312489000048435 /* SectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 		64729835230E4B0C00E2DF32 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				649063942316552400332540 /* ImageLoader.swift */,
 				64729836230E4B2A00E2DF32 /* NibLoadable.swift */,
 				64729838230E4B4500E2DF32 /* Extensions.swift */,
 			);
@@ -240,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64EB54872311EF7500048435 /* GuideTableViewCell.xib in Resources */,
+				64EB548B2312489000048435 /* SectionHeaderView.xib in Resources */,
 				6455316E230DBDF20099A0F3 /* LaunchScreen.storyboard in Resources */,
 				6455316B230DBDF20099A0F3 /* Assets.xcassets in Resources */,
 				6472982D230E07F000E2DF32 /* upcomingGuides.json in Resources */,
@@ -265,6 +275,8 @@
 				64729832230E4A7800E2DF32 /* GuideTableViewCell.swift in Sources */,
 				64553164230DBDF00099A0F3 /* AppDelegate.swift in Sources */,
 				64729839230E4B4500E2DF32 /* Extensions.swift in Sources */,
+				649063952316552400332540 /* ImageLoader.swift in Sources */,
+				64EB54892312487F00048435 /* SectionHeaderView.swift in Sources */,
 				64729826230E020B00E2DF32 /* GuideFacade.swift in Sources */,
 				64F9BD21230DCBA400043897 /* UpcomingGuidesResponse.swift in Sources */,
 				64729828230E035800E2DF32 /* Service.swift in Sources */,

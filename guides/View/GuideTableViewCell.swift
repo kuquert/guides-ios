@@ -8,19 +8,38 @@
 
 import UIKit
 
-@IBDesignable
-class GuideTableViewCell: UITableViewCell, NibLoadable {
-
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailLable: UILabel!
-    @IBOutlet weak var locationLable: UILabel!
+final class GuideTableViewCell: UITableViewCell, NibLoadable {
+    @IBOutlet var iconImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var detailLable: UILabel!
+    @IBOutlet var calendarIcon: UIImageView!
+    @IBOutlet var locationLable: UILabel!
+    @IBOutlet var locationIcon: UIImageView!
+    @IBOutlet var backgroundColoredView: UIView!
 
     var guide: Guide? {
         didSet {
-            titleLabel.text = guide?.name
-            detailLable.text = endDateFormatter(guide)
-            locationLable.text = venueFormatter(guide)
+            let endDate = formattedEndDate(guide)
+            let location = formattedLocation(guide)
+            titleLabel.text = guide?.name.uppercased()
+
+            detailLable.text = endDate
+            detailLable.isHidden = endDate == nil
+            calendarIcon.isHidden = endDate == nil
+
+            locationLable.text = location
+            locationLable.isHidden = location == nil
+            locationIcon.isHidden = location == nil
         }
+    }
+
+    func setIcon(_ icon: UIImage) {
+        iconImageView.image = icon
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.image = nil
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,7 +52,17 @@ class GuideTableViewCell: UITableViewCell, NibLoadable {
         fromNib()
     }
 
-    private func venueFormatter(_ guide: Guide?) -> String {
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+
+        backgroundColoredView.layer.shadowOpacity = 0.3
+        backgroundColoredView.layer.shadowColor = UIColor.gray.cgColor
+        backgroundColoredView.layer.shadowOffset = .zero
+        backgroundColoredView.layer.shadowRadius = 8
+        backgroundColoredView.layer.cornerRadius = 8
+    }
+
+    private func formattedLocation(_ guide: Guide?) -> String? {
         if let city = guide?.venue.city, let state = guide?.venue.state {
             return "\(city), \(state)"
         } else if let city = guide?.venue.city {
@@ -41,15 +70,15 @@ class GuideTableViewCell: UITableViewCell, NibLoadable {
         } else if let state = guide?.venue.state {
             return "\(state)"
         } else {
-            return  ""
+            return nil
         }
     }
 
-    private func endDateFormatter(_ guide: Guide?) -> String {
+    private func formattedEndDate(_ guide: Guide?) -> String? {
         if let endDate = guide?.endDate {
             return "Ending on \(endDate)"
         } else {
-            return ""
+            return nil
         }
     }
 }
