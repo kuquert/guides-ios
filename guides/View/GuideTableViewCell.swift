@@ -17,6 +17,8 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
     @IBOutlet var locationIcon: UIImageView!
     @IBOutlet var backgroundColoredView: UIView!
 
+    static let highlightFactor: CGFloat = 0.96
+    
     var guide: Guide? {
         didSet {
             titleLabel.text = guide?.name.uppercased()
@@ -32,24 +34,28 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
             locationIcon.isHidden = location == nil
         }
     }
-
-    func setIcon(_ icon: UIImage) {
-        iconImageView.image = icon
-    }
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        iconImageView.image = nil
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        fromNib()
+    
+    var icon: UIImage? {
+        didSet {
+            iconImageView.image = icon
+        }
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         fromNib()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        selectionStyle = .none
+        fromNib()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        icon = nil
     }
 
     override func draw(_ rect: CGRect) {
@@ -80,5 +86,45 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
         } else {
             return nil
         }
+    }
+}
+
+extension GuideTableViewCell {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        animate(isHighlighted: true)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        animate(isHighlighted: false)
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        animate(isHighlighted: false)
+    }
+    
+    private func animate(isHighlighted: Bool) {
+        let animationBlock: () -> Void
+        
+        if isHighlighted {
+            animationBlock = { [weak self] in
+                self?.transform = .init(scaleX: GuideTableViewCell.highlightFactor,
+                                        y: GuideTableViewCell.highlightFactor)
+            }
+        } else {
+            animationBlock = { [weak self] in
+                self?.transform = .identity
+            }
+        }
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.5,
+                       options: [],
+                       animations: animationBlock,
+                       completion: nil)
     }
 }

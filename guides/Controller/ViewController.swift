@@ -89,7 +89,7 @@ extension ViewController: UITableViewDataSource {
 
         ImageLoader.shared.obtainImageWithPath(imagePath: guide.icon) { image in
             if let updateCell = tableView.cellForRow(at: indexPath) as? GuideTableViewCell {
-                updateCell.setIcon(image)
+                updateCell.icon = image
             }
         }
         return cell
