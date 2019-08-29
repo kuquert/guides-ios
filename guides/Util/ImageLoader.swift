@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ImageLoader {
+struct ImageLoader {
     static let shared = ImageLoader()
     let cache = NSCache<NSString, UIImage>()
     let placeholder = UIImage(named: "placeholder")!
 
-    func obtainImageWithPath(imagePath: String,
-                             completionHandler: @escaping ((UIImage) -> Void)) {
+    func obtainImageWithPath(imagePath: String, completionHandler: @escaping (UIImage) -> Void) {
         if let image = cache.object(forKey: imagePath as NSString) {
             DispatchQueue.main.async {
                 completionHandler(image)
