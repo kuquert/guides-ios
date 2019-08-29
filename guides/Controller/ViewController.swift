@@ -11,8 +11,6 @@ import UIKit
 final class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
-    private let cellId = "GuideTableViewCell"
-    private let headerId = "SectionHeaderView"
     private var groupedGuides: [String: [Guide]] = [:]
 
     override func viewDidLoad() {
@@ -32,9 +30,9 @@ final class ViewController: UIViewController {
         tableView.sectionHeaderHeight = UITableView.automaticDimension
 
         tableView.register(GuideTableViewCell.self,
-                           forCellReuseIdentifier: cellId)
+                           forCellReuseIdentifier: GuideTableViewCell.reuseIdentifier())
         tableView.register(SectionHeaderView.self,
-                           forHeaderFooterViewReuseIdentifier: headerId)
+                           forHeaderFooterViewReuseIdentifier: SectionHeaderView.reuseIdentifier())
     }
 
     private func loadUpcommingGuides() {
@@ -53,7 +51,7 @@ final class ViewController: UIViewController {
                 var temp = dict.removeValue(forKey: guide.startDate) ?? []
                 temp.append(guide)
                 dict[guide.startDate] = temp
-        }
+            }
     }
 }
 
@@ -63,7 +61,7 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerId) as! SectionHeaderView
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderView.reuseIdentifier()) as! SectionHeaderView
         header.startDate = groupedGuides.keys.sorted()[section]
         return header
     }
@@ -81,7 +79,7 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId,
+        let cell = tableView.dequeueReusableCell(withIdentifier: GuideTableViewCell.reuseIdentifier(),
                                                  for: indexPath) as! GuideTableViewCell
 
         cell.guide = guide

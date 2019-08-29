@@ -56,18 +56,18 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
 
     private func guideDidSet() {
         titleLabel.text = guide?.name.uppercased()
-        
+
         let endDate = GuideTableViewCell.formattedEndDate(guide)
         detailLable.text = endDate
         detailLable.isHidden = endDate == nil
         calendarIcon.isHidden = endDate == nil
-        
+
         let location = GuideTableViewCell.formattedLocation(guide)
         locationLable.text = location
         locationLable.isHidden = location == nil
         locationIcon.isHidden = location == nil
     }
-    
+
     private static func formattedLocation(_ guide: Guide?) -> String? {
         if let city = guide?.venue.city, let state = guide?.venue.state {
             return "\(city), \(state)"
@@ -106,7 +106,7 @@ extension GuideTableViewCell {
     }
 
     private func highlight(isSelected: Bool) {
-        UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.5){ [weak self] in
+        UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.5) { [weak self] in
             if isSelected {
                 self?.transform = .identity
             } else {

@@ -25,4 +25,8 @@ extension NibLoadable {
         contentView.clipEdges(to: self)
         return contentView
     }
+
+    static func reuseIdentifier() -> String {
+        return String(describing: type(of: self))
+    }
 }
