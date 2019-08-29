@@ -1,28 +1,29 @@
 # guides-ios
 Coding challenge for listing guides
 
-<!-- ## Setup
+## Setup
 
 Developed with `Xcode Version 10.3 (10G8)`
-
-This project uses [Carthage](https://github.com/Carthage/Carthage)<sup>*</sup>. To install dependencies use:
-```
-carthage bootstrap --platform iOS
-```
-> *I pesonaly don't like Cocoapods Workspace magics, also I feel that Carthage is more safe<sup>**</sup> and transparent.
-> ** With cocoapods any dependency has the ability to run randon scripts described on the Podspec.
-
-
-## Dependencies
-
-[Kingfischer](https://github.com/onevcat/Kingfisher)
-> Image loading and caching, used for icons on cells.I choose Kingfischer because it has less issues and more recent commits when compared with [Haneke](https://github.com/Haneke/HanekeSwift)
-
  
-## Architecture
+## Design Pattern
+It's a small project so I decided to go with **Apple's MVC**, this approach reduces boilerplate code and keeps code easy to follow. I also decided to use `Interface Builder` instead of view code because it's faster to prototype and I had to make design decisions on the go.
 
-- It's a small project so I decided to go with Apples's MVC, just with separation of the cell.
-- Created a simple networking layer, usign URLSession and the power og Swift Codable for object mapping.
-- This approach allows for mock json files
-- Using ApiRoute, we centralize all the API routes that might be called in the Facades
--->
+#### Networking
+- Created a simple networking layer, using `URLSession` and `Swift Codable` for object mapping, that allows mocking responses.
+- Using ApiRoute to centralize all the API routes that might be called in the Facades.
+
+###### Adding new route
+To add a new route you need to fallow the steps below
+1. Add a case on `ApiRoute.swift` including its `url`, `method`, and `mockFilePath`.
+1. If needed create the `Response` model that represents the server response.
+1. Create a func on a Facade that represents the resource `or` create a new Facade.
+
+#### Code style
+- Using class extensions to separate protocol conformations, this is not optimal in terms of compilation time. For large projects, I would go with the `//MARK: - ` approach for this separation
+- Configure tableView in code to avoid hidden IB configurations.
+
+## Improvments
+
+- [ ] Support dynamic type for custom fonts
+- [ ] Error handling
+- [ ] Add tests
