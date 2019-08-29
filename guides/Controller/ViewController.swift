@@ -33,7 +33,7 @@ final class ViewController: UIViewController {
 
         tableView.register(GuideTableViewCell.self,
                            forCellReuseIdentifier: cellId)
-        tableView.register(AlternativeSectionHeaderView.self,
+        tableView.register(SectionHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: headerId)
     }
 
@@ -63,7 +63,7 @@ extension ViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerId) as! AlternativeSectionHeaderView
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerId) as! SectionHeaderView
         header.startDate = groupedGuides.keys.sorted()[section]
         return header
     }
