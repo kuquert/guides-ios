@@ -109,7 +109,6 @@
 			children = (
 				64729823230E01A600E2DF32 /* Api */,
 				6490639A2317719D00332540 /* Service */,
-				64F9BD24230DCDE500043897 /* Response */,
 				64729824230E020300E2DF32 /* Facade */,
 			);
 			path = Network;
@@ -184,6 +183,7 @@
 		64F9BD1D230DC93900043897 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				64F9BD24230DCDE500043897 /* Response */,
 				64F9BD1E230DC95800043897 /* Guide.swift */,
 				64F9BD22230DCDCC00043897 /* Venue.swift */,
 			);
