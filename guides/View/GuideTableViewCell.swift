@@ -17,28 +17,20 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
     @IBOutlet var locationIcon: UIImageView!
     @IBOutlet var backgroundColoredView: UIView!
 
-    static let highlightFactor: CGFloat = 0.96
-    
-    var guide: Guide? {
-        didSet {
-            titleLabel.text = guide?.name.uppercased()
-            
-            let endDate = formattedEndDate(guide)
-            detailLable.text = endDate
-            detailLable.isHidden = endDate == nil
-            calendarIcon.isHidden = endDate == nil
+    private static let highlightFactor: CGFloat = 0.96
 
-            let location = formattedLocation(guide)
-            locationLable.text = location
-            locationLable.isHidden = location == nil
-            locationIcon.isHidden = location == nil
-        }
-    }
-    
     var icon: UIImage? {
-        didSet {
-            iconImageView.image = icon
-        }
+        didSet { iconImageView.image = icon }
+    }
+
+    var guide: Guide? {
+        didSet { guideDidSet() }
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        selectionStyle = .none
+        fromNib()
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -46,13 +38,7 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
         selectionStyle = .none
         fromNib()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        selectionStyle = .none
-        fromNib()
-    }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         icon = nil
@@ -68,7 +54,21 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
         backgroundColoredView.layer.cornerRadius = 8
     }
 
-    private func formattedLocation(_ guide: Guide?) -> String? {
+    private func guideDidSet() {
+        titleLabel.text = guide?.name.uppercased()
+        
+        let endDate = GuideTableViewCell.formattedEndDate(guide)
+        detailLable.text = endDate
+        detailLable.isHidden = endDate == nil
+        calendarIcon.isHidden = endDate == nil
+        
+        let location = GuideTableViewCell.formattedLocation(guide)
+        locationLable.text = location
+        locationLable.isHidden = location == nil
+        locationIcon.isHidden = location == nil
+    }
+    
+    private static func formattedLocation(_ guide: Guide?) -> String? {
         if let city = guide?.venue.city, let state = guide?.venue.state {
             return "\(city), \(state)"
         } else if let city = guide?.venue.city {
@@ -80,7 +80,7 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
         }
     }
 
-    private func formattedEndDate(_ guide: Guide?) -> String? {
+    private static func formattedEndDate(_ guide: Guide?) -> String? {
         if let endDate = guide?.endDate {
             return "Ending on \(endDate)"
         } else {
