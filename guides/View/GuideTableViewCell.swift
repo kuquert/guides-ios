@@ -46,7 +46,10 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-
+        addShadowAndCornerRaidus()
+    }
+    
+    private func addShadowAndCornerRaidus() {
         backgroundColoredView.layer.shadowOpacity = 0.3
         backgroundColoredView.layer.shadowColor = UIColor.gray.cgColor
         backgroundColoredView.layer.shadowOffset = .zero
