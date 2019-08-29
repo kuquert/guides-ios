@@ -16,9 +16,7 @@ extension NibLoadable {
     @discardableResult
     func fromNib() -> UIView? {
         let contentView = Bundle(for: type(of: self))
-            .loadNibNamed(String(describing: type(of: self)),
-                          owner: self,
-                          options: nil)?
+            .loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?
             .first as! UIView
         addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
