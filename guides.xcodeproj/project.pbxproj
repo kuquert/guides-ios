@@ -93,7 +93,7 @@
 				64729818230DF31000E2DF32 /* Network */,
 				64F9BD1D230DC93900043897 /* Model */,
 				6472982E230E4A4200E2DF32 /* View */,
-				64EB54852311CD1E00048435 /* Controller */,
+				64EB54852311CD1E00048435 /* ViewController */,
 				64729835230E4B0C00E2DF32 /* Util */,
 				6472982B230E07BD00E2DF32 /* MockData */,
 				64553163230DBDF00099A0F3 /* AppDelegate.swift */,
@@ -171,13 +171,13 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		64EB54852311CD1E00048435 /* Controller */ = {
+		64EB54852311CD1E00048435 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				64553167230DBDF00099A0F3 /* Main.storyboard */,
 				64553165230DBDF00099A0F3 /* ViewController.swift */,
 			);
-			path = Controller;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		64F9BD1D230DC93900043897 /* Model */ = {
