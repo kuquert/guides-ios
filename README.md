@@ -6,7 +6,10 @@ Coding challenge for listing guides
 Developed with `Xcode Version 10.3 (10G8)`
  
 ## Design Pattern
-It's a small project so I decided to go with **Apple's MVC**, this approach reduces boilerplate code and keeps code easy to follow. I also decided to use `Interface Builder` instead of view code because it's faster to prototype and I had to make design decisions on the go.
+It's a small project so I decided to go with a variation of **Apple's MVC**, this approach reduces boilerplate code and keeps code easy to follow. I also decided to use `Interface Builder` instead of view code because it's faster to prototype and I had to make design decisions on the go.
+
+#### Dependencies
+I did not need any dependecy due to the simplicity of the project, but if I need one, my first choice of dependency manager is **Cartage** mainly because I feel that it is safer when compared with CocoaPods because CocoaPods with its workspace allows any dependency to include scripts on build steps.
 
 #### Networking
 - Created a simple networking layer, using `URLSession` and `Swift Codable` for object mapping, that allows mocking responses.
