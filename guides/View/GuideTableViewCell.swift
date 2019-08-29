@@ -92,39 +92,27 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
 extension GuideTableViewCell {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        animate(isHighlighted: true)
+        highlight(isSelected: false)
     }
-    
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        animate(isHighlighted: false)
+        highlight(isSelected: true)
     }
-    
+
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
-        animate(isHighlighted: false)
+        highlight(isSelected: true)
     }
-    
-    private func animate(isHighlighted: Bool) {
-        let animationBlock: () -> Void
-        
-        if isHighlighted {
-            animationBlock = { [weak self] in
+
+    private func highlight(isSelected: Bool) {
+        UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.5){ [weak self] in
+            if isSelected {
+                self?.transform = .identity
+            } else {
                 self?.transform = .init(scaleX: GuideTableViewCell.highlightFactor,
                                         y: GuideTableViewCell.highlightFactor)
             }
-        } else {
-            animationBlock = { [weak self] in
-                self?.transform = .identity
-            }
-        }
-        
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.0,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 0.5,
-                       options: [],
-                       animations: animationBlock,
-                       completion: nil)
+        }.startAnimation()
     }
 }
