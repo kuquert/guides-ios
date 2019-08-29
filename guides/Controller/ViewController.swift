@@ -26,11 +26,11 @@ final class ViewController: UIViewController {
 
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedSectionHeaderHeight = 105
-        tableView.sectionHeaderHeight = UITableView.automaticDimension
-
         tableView.register(GuideTableViewCell.self,
                            forCellReuseIdentifier: GuideTableViewCell.reuseIdentifier())
+        
+        tableView.estimatedSectionHeaderHeight = 60
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.register(SectionHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: SectionHeaderView.reuseIdentifier())
     }
