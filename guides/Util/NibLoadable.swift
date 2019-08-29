@@ -9,12 +9,12 @@
 import UIKit
 
 protocol NibLoadable where Self: UIView {
-    func fromNib() -> UIView?
+    func loadFromNib() -> UIView?
 }
 
 extension NibLoadable {
     @discardableResult
-    func fromNib() -> UIView? {
+    func loadFromNib() -> UIView? {
         let contentView = Bundle(for: type(of: self))
             .loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?
             .first as! UIView

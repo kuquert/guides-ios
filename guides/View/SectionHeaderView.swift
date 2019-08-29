@@ -19,11 +19,11 @@ class SectionHeaderView: UITableViewHeaderFooterView, NibLoadable {
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        fromNib()
+        loadFromNib()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        fromNib()
+        loadFromNib()
     }
 }

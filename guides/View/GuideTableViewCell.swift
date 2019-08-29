@@ -30,13 +30,13 @@ final class GuideTableViewCell: UITableViewCell, NibLoadable {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         selectionStyle = .none
-        fromNib()
+        loadFromNib()
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        fromNib()
+        loadFromNib()
     }
 
     override func prepareForReuse() {
