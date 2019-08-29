@@ -10,7 +10,7 @@ import Foundation
 
 enum ApiRoute {
     case upcomingGuides
-    case guide(String) // TODO: This is just an non-working example
+    case guide(String) // This is just an non-working example
 
     private func baseUrlWithPath(path: String) -> URL {
         return URL(string: "https://www.guidebook.com/service/v2/")!.appendingPathComponent(path)

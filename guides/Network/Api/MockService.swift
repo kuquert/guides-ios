@@ -12,29 +12,31 @@ struct MockService: Service {
     static let shared = MockService()
 
     func load<T>(route: ApiRoute, completion: @escaping (T?, Error?) -> Void) where T: Decodable {
-        var fileName: String {
+        // TODO: Maybe move this to ApiRoute
+        let fileName: String = {
             switch route {
             case .upcomingGuides:
                 return "upcomingGuides"
             default:
                 return "404"
             }
-        }
+        }()
 
-        guard let data = dataForFile(name: fileName) else {
-            completion(nil, ApiError.noData)
+        guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else {
+            completion(nil, ApiError.invalidMockFilePath)
             return
         }
 
-        let decoder = JSONDecoder()
-        let guidesResponse = try! decoder.decode(T.self, from: data)
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped) else {
+            completion(nil, ApiError.mockFileNotFound)
+            return
+        }
 
-        completion(guidesResponse, nil)
-    }
+        guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else {
+            completion(nil, ApiError.decoderFailed)
+            return
+        }
 
-    private func dataForFile(name: String) -> Data? {
-        let path = Bundle.main.path(forResource: name, ofType: "json")!
-        let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-        return data
+        completion(decodedResponse, nil)
     }
 }

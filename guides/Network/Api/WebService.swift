@@ -24,10 +24,12 @@ struct WebService: Service {
                     return
                 }
 
-                let decoder = JSONDecoder()
-                let guidesResponse = try! decoder.decode(T.self, from: data)
+                guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else {
+                    completion(nil, ApiError.decoderFailed)
+                    return
+                }
 
-                completion(guidesResponse, error)
+                completion(decodedResponse, nil)
             }
         }.resume()
     }
