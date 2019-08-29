@@ -48,13 +48,12 @@ final class ViewController: UIViewController {
     }
 
     private static func groupByDate(guides: [Guide]) -> [String: [Guide]] {
-        var dict: [String: [Guide]] = [:]
-        guides.forEach {
-            var temp = dict.removeValue(forKey: $0.startDate) ?? []
-            temp.append($0)
-            dict[$0.startDate] = temp
+        return
+            guides.reduce(into: [String: [Guide]]()) { dict, guide in
+                var temp = dict.removeValue(forKey: guide.startDate) ?? []
+                temp.append(guide)
+                dict[guide.startDate] = temp
         }
-        return dict
     }
 }
 
@@ -68,7 +67,7 @@ extension ViewController: UITableViewDataSource {
         header.startDate = groupedGuides.keys.sorted()[section]
         return header
     }
-    
+
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         let keyForSection = groupedGuides.keys.sorted()[section]
         return groupedGuides[keyForSection]?.count ?? 0
