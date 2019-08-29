@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  UIView+Extensions.swift
 //  guides
 //
 //  Created by Marcus Kuquert on 8/22/19.
