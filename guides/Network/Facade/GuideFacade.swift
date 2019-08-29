@@ -10,7 +10,7 @@ import Foundation
 
 struct GuideFacade {
     static let shared = GuideFacade()
-    private let service: Service = MockService.shared
+    private let service: Service = WebService.shared
 
     func loadUpcomingGuides(completion: @escaping (UpcomingGuidesResponse?, Error?) -> Void) {
         service.load(route: ApiRoute.upcomingGuides, completion: completion)
