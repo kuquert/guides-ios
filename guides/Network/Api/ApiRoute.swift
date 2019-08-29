@@ -48,7 +48,7 @@ enum ApiRoute {
                 return "404"
             }
         }
-        
+
         return Bundle.main.path(forResource: fileName, ofType: "json")
     }
 }

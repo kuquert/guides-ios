@@ -108,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				64729823230E01A600E2DF32 /* Api */,
+				6490639A2317719D00332540 /* Service */,
 				64F9BD24230DCDE500043897 /* Response */,
 				64729824230E020300E2DF32 /* Facade */,
 			);
@@ -120,9 +121,6 @@
 				64729819230DF31D00E2DF32 /* ApiRoute.swift */,
 				64729821230DFF8E00E2DF32 /* ApiError.swift */,
 				6472981F230DF55E00E2DF32 /* HttpMethod.swift */,
-				64729827230E035800E2DF32 /* Service.swift */,
-				6472981B230DF33100E2DF32 /* WebService.swift */,
-				64729829230E040100E2DF32 /* MockService.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -162,6 +160,16 @@
 				64729838230E4B4500E2DF32 /* UIView+Extensions.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		6490639A2317719D00332540 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				64729827230E035800E2DF32 /* Service.swift */,
+				6472981B230DF33100E2DF32 /* WebService.swift */,
+				64729829230E040100E2DF32 /* MockService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		64EB54852311CD1E00048435 /* Controller */ = {
