@@ -38,4 +38,17 @@ enum ApiRoute {
         request.httpMethod = method.rawValue
         return request
     }
+
+    var mockFilePath: String? {
+        var fileName: String {
+            switch self {
+            case .upcomingGuides:
+                return "upcomingGuides"
+            case .guide:
+                return "404"
+            }
+        }
+        
+        return Bundle.main.path(forResource: fileName, ofType: "json")
+    }
 }

@@ -12,17 +12,7 @@ struct MockService: Service {
     static let shared = MockService()
 
     func load<T>(route: ApiRoute, completion: @escaping (T?, Error?) -> Void) where T: Decodable {
-        // TODO: Maybe move this to ApiRoute
-        let fileName: String = {
-            switch route {
-            case .upcomingGuides:
-                return "upcomingGuides"
-            default:
-                return "404"
-            }
-        }()
-
-        guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else {
+        guard let path = route.mockFilePath else {
             completion(nil, ApiError.invalidMockFilePath)
             return
         }
