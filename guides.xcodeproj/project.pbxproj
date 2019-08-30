@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642C53BB231991CE00BA2C7A /* guidesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642C53BA231991CE00BA2C7A /* guidesTests.swift */; };
 		64553164230DBDF00099A0F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64553163230DBDF00099A0F3 /* AppDelegate.swift */; };
 		64553166230DBDF00099A0F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64553165230DBDF00099A0F3 /* ViewController.swift */; };
 		64553169230DBDF00099A0F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64553167230DBDF00099A0F3 /* Main.storyboard */; };
@@ -32,7 +33,20 @@
 		64F9BD23230DCDCC00043897 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F9BD22230DCDCC00043897 /* Venue.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		642C53BD231991CE00BA2C7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64553158230DBDF00099A0F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6455315F230DBDF00099A0F3;
+			remoteInfo = guides;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		642C53B8231991CE00BA2C7A /* guidesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = guidesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		642C53BA231991CE00BA2C7A /* guidesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidesTests.swift; sourceTree = "<group>"; };
+		642C53BC231991CE00BA2C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64553160230DBDF00099A0F3 /* guides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = guides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64553163230DBDF00099A0F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64553165230DBDF00099A0F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +75,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		642C53B5231991CE00BA2C7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6455315D230DBDF00099A0F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,10 +92,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		642C53B9231991CE00BA2C7A /* guidesTests */ = {
+			isa = PBXGroup;
+			children = (
+				642C53BA231991CE00BA2C7A /* guidesTests.swift */,
+				642C53BC231991CE00BA2C7A /* Info.plist */,
+			);
+			path = guidesTests;
+			sourceTree = "<group>";
+		};
 		64553157230DBDF00099A0F3 = {
 			isa = PBXGroup;
 			children = (
 				64553162230DBDF00099A0F3 /* guides */,
+				642C53B9231991CE00BA2C7A /* guidesTests */,
 				64553161230DBDF00099A0F3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				64553160230DBDF00099A0F3 /* guides.app */,
+				642C53B8231991CE00BA2C7A /* guidesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +233,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		642C53B7231991CE00BA2C7A /* guidesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 642C53C1231991CE00BA2C7A /* Build configuration list for PBXNativeTarget "guidesTests" */;
+			buildPhases = (
+				642C53B4231991CE00BA2C7A /* Sources */,
+				642C53B5231991CE00BA2C7A /* Frameworks */,
+				642C53B6231991CE00BA2C7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				642C53BE231991CE00BA2C7A /* PBXTargetDependency */,
+			);
+			name = guidesTests;
+			productName = guidesTests;
+			productReference = 642C53B8231991CE00BA2C7A /* guidesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6455315F230DBDF00099A0F3 /* guides */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64553172230DBDF20099A0F3 /* Build configuration list for PBXNativeTarget "guides" */;
@@ -228,6 +278,10 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Marcus V Kuquert";
 				TargetAttributes = {
+					642C53B7231991CE00BA2C7A = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 6455315F230DBDF00099A0F3;
+					};
 					6455315F230DBDF00099A0F3 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -247,11 +301,19 @@
 			projectRoot = "";
 			targets = (
 				6455315F230DBDF00099A0F3 /* guides */,
+				642C53B7231991CE00BA2C7A /* guidesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		642C53B6231991CE00BA2C7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6455315E230DBDF00099A0F3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +330,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		642C53B4231991CE00BA2C7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				642C53BB231991CE00BA2C7A /* guidesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6455315C230DBDF00099A0F3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +364,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		642C53BE231991CE00BA2C7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6455315F230DBDF00099A0F3 /* guides */;
+			targetProxy = 642C53BD231991CE00BA2C7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		64553167230DBDF00099A0F3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -314,6 +392,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		642C53BF231991CE00BA2C7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = guidesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kuquert.com.guidesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/guides.app/guides";
+			};
+			name = Debug;
+		};
+		642C53C0231991CE00BA2C7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = guidesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kuquert.com.guidesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/guides.app/guides";
+			};
+			name = Release;
+		};
 		64553170230DBDF20099A0F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -467,6 +583,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		642C53C1231991CE00BA2C7A /* Build configuration list for PBXNativeTarget "guidesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				642C53BF231991CE00BA2C7A /* Debug */,
+				642C53C0231991CE00BA2C7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6455315B230DBDF00099A0F3 /* Build configuration list for PBXProject "guides" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

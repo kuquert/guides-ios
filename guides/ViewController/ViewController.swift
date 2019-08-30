@@ -45,7 +45,7 @@ final class ViewController: UIViewController {
         }
     }
 
-    private static func groupByDate(guides: [Guide]) -> [String: [Guide]] {
+    static func groupByDate(guides: [Guide]) -> [String: [Guide]] {
         return
             guides.reduce(into: [String: [Guide]]()) { dict, guide in
                 var temp = dict.removeValue(forKey: guide.startDate) ?? []
