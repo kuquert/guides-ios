@@ -27,6 +27,4 @@ To add a new route you need to fallow the steps below
 
 ## Improvments
 
-- [ ] Support dynamic type for custom fonts
-- [ ] Error handling
-- [ ] Add tests
+- [ ] Better Error handling for failed requests
